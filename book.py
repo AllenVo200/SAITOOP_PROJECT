@@ -34,6 +34,9 @@ class Book:
         return self.author
     def get_genre(self):
         return self.genre
+    #setter method to get all the information of the book
+    def get_all_info(self):
+        return self.isbn, self.title, self.author, self.genre, self.availability
 
     #setter that changes a certain object in the list
     def set_isbn(self,isbn):
