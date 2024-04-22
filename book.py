@@ -50,17 +50,21 @@ class Book:
     
     #method to borrow the book
     def borrow_it(self):
-        if self.availability:
+        print(self.availability)
+        if self.availability == True:
             self.availability = False
+            print(self.title, "with ISBN (", self.isbn, ") Successfully borrowed.")
         else:
-            print("Sorry, the book", self.title, "is not available for borrowing.")
+            print(self.title, "with ISBN (", self.isbn, ") is not currently available")
+  
 
     #method to return the book
     def return_it(self):
-        if not self.availability:
+        if self.availability == False:
             self.availability = True
+            print(self.title, "with ISBN (", self.isbn, ") Successfully returned.")
         else:
-            print("Error: The book", self.title, "is already available.")
+            print(self.title, "with ISBN (", self.isbn, ") is not currently borrowed")
 
     #Return the string representation of the book object formated for display table
     def __str__(self):
