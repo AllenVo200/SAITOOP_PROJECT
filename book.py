@@ -1,5 +1,3 @@
-import sys
-
 class Book:
 
     #method is a constructor that initializes the book object
@@ -37,10 +35,19 @@ class Book:
     def get_genre(self):
         return self.genre
 
+    #setter that changes a certain object in the list
+    def set_isbn(self,isbn):
+        self.isbn=isbn
+    def set_title(self,title):
+        self.title=title
+    def set_author(self,author):
+        self.author=author
+    def set_genre(self,genre):
+        self.genre=genre
+    
     #method to borrow the book
     def borrow_it(self):
         if self.availability:
-            print("You have borrowed the book:", self.title)
             self.availability = False
         else:
             print("Sorry, the book", self.title, "is not available for borrowing.")
@@ -48,14 +55,11 @@ class Book:
     #method to return the book
     def return_it(self):
         if not self.availability:
-        
-            
-
             self.availability = True
         else:
             print("Error: The book", self.title, "is already available.")
 
-    #Return the string representation of the book object formated for display
-    def __str__(self,book_list):
+    #Return the string representation of the book object formated for display table
+    def __str__(self):
         return "{:14s} {:25s} {:25s} {:20s} {:s}".format(self.isbn, self.title, self.author, self.get_genre_name(), self.get_availability())
     
